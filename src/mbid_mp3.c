@@ -94,7 +94,7 @@ int getMP3_MBID(const char *path, char mbid[MBID_BUFFER_SIZE])
 
    while (s) {
       mfile(3,head,fp,&s);
-      if (!strncmp(head,"ID3",3) == 0) {
+      if (!(strncmp(head,"ID3",3) == 0)) {
          //debug("No ID3v2 tag found: %s\n",path);
          break;
       }
